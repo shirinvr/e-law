@@ -1,0 +1,202 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="Styles/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="Styles/bootstrap-4.1.0.min.js" type="text/javascript"></script>
+        <link href="Styles/bootstrap-4.1.0.min.css" rel="stylesheet" type="text/css"/>
+        <link href="Styles/MainStyle.css" rel="stylesheet" type="text/css"/>
+        <title></title>
+    </head>
+    <body>
+        <?php
+        session_start();
+        ?>
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="/user_index/{{current_user.id}}" role="tab" aria-controls="home" aria-selected="false">Back</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Book Lawyer</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active text-align form-new" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Book Lawyer</h3>
+                            <div class="row register-form">
+                                <div class="col-md-12">
+                                     <form    action="" method="POST" enctype = "multipart/form-data">
+                    <input type="hidden" name="uid" value="{{u.id}}">
+                    <input type="hidden" name="lid" value="{{l.id}}">
+                    <div class="form-group row">
+                        <label style="color: white;" for="full_name" class="col-md-4 col-form-label text-md-right">Name</label>
+                        <div class="col-md-6">
+                            <input type="text" id="full_name" class="form-control" style= "height: 58px;width: 418px;" name="uname" value="{{u.name}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label style="color: white;" for="email_address" class="col-md-4 col-form-label text-md-right">Email</label>
+                        <div class="col-md-6">
+                            <input type="text" id="email_address" class="form-control" style= "height: 58px;width: 418px;" name="uemail" value="{{u.username}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label style="color: white;"for="email_address" class="col-md-4 col-form-label text-md-right">Contact</label>
+                        <div class="col-md-6">
+                            <input type="text" id="email_address" class="form-control" style= "height: 58px;width: 418px;" name="ucontact" value="{{u.contact}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label style="color: white;"for="email_address" class="col-md-4 col-form-label text-md-right">Address</label>
+                        <div class="col-md-6">
+                            <textarea id="email_address" class="form-control" style= "height: 58px;width: 418px;" name="address">{{u.address}}</textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label style="color: white;"for="user_name" class="col-md-4 col-form-label text-md-right">Place</label>
+                        <div class="col-md-6">
+                            <input type="text" id="user_name" class="form-control"style= "height: 58px;width: 418px;" name="place" value="{{u.place}}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label style="color: white;" for="email_address" class="col-md-4 col-form-label text-md-right">Lawyer Name</label>
+                        <div class="col-md-6">
+                            <textarea id="email_address" class="form-control" style= "height: 58px;width: 418px;" name="lname">{{l.name}}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row"> 
+                        <label style="color: white;" for="user_name" class="col-md-4 col-form-label text-md-right">Lawyer Email</label>
+                        <div class="col-md-6">
+                            <input type="text" id="user_name" class="form-control"style= "height: 58px;width: 418px;" name="lemail" value="{{l.username}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label style="color: white;"for="phone_number" class="col-md-4 col-form-label text-md-right">Lawyer Contact</label>
+                        <div class="col-md-6">
+                            <input type="text" id="phone_number" class="form-control" style= "height: 58px;width: 418px;" name="lcontact" value="{{l.contact}}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label style="color: white;"for="phone_number" class="col-md-4 col-form-label text-md-right">Booking Date</label>
+                        <div class="col-md-6">
+                            <input type="date" id="phone_number" class="form-control" style= "height: 58px;width: 418px;" name="buk_date" >
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label style="color: white;"for="permanent_address" class="col-md-4 col-form-label text-md-right">Case</label>
+                        <div class="col-md-6">
+                            <select id="permanent_address" class="form-control" style= "height: 58px;width: 418px;" name="case" >
+                                <option>Criminal Case</option>
+                                <option>Divorce Case</option>
+                                <option>Civil Case</option>
+                                <option>Family Case</option>
+                                <option>Bankruptcy Case</option>
+                                <option>Property Case</option>
+                            </select>
+                        </div>
+                    </div> 
+            
+                    <div class="form-group row">
+                        <label style="color: white;"for="permanent_address" class="col-md-4 col-form-label text-md-right">Case File</label>
+                        <div class="col-md-6">
+                            <input type="file" class="form-control" name="file" id="email" class="form-control" >
+                        </div>
+                    </div>
+
+                    <button style=" background-color: forestgreen;
+                    margin-left: 202px;
+                    margin-top: 33px;"
+                type="submit " value="Confirm Bookimg">Confirm Booking</button>
+     <br>
+                <a href="/user_index/{{current_user.id}}" class="btn btn-small btn-danger" style=" background-color: red;
+                margin-left: 202px;
+                margin-top: 33px;" >Cancel</a>
+
+</form>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<style>
+    .btnContactSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    color: #fff;
+    background-color: #0062cc;
+    border: none;
+    cursor: pointer;
+    margin-right: 6%;
+    background-color: white;
+    color: blue;
+    margin-top: 4%;
+}
+.register .nav-tabs .nav-link:hover{
+    border: none;
+}
+.text-align{
+    margin-top: -3%;
+    margin-bottom: -9%;
+
+    padding: 10%;
+    margin-left: 30%;
+}
+.form-new{
+    margin-right: 22%;
+    margin-left: 20%;
+}
+.register-heading{
+    margin-left: 21%;
+    margin-bottom: 10%;
+    color: #e9ecef;
+}
+.register-heading h1{
+    margin-left: 21%;
+    margin-bottom: 10%;
+    color: #e9ecef;
+}
+.btnLoginSubmit{
+    border: none;
+    padding: 2%;
+    width: 25%;
+    cursor: pointer;
+    background: #29abe2;
+    color: #fff;
+}
+.btnForgetPwd{
+    cursor: pointer;
+    margin-right: 5%;
+    color: #f8f9fa;
+}
+.register{
+    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    margin-top: 3%;
+    padding: 3%;
+    border-radius: 2.5rem;
+}
+.nav-tabs .nav-link{
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: white;
+}
+</style>

@@ -1,0 +1,30 @@
+{%extends "user_layout.html"%}
+{%block content%}
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<br><br><br><h1><center>Case History</center></h1><br><br><br>
+
+<div class="container">
+
+             {%for i in obj%}    
+                  <div class="col-md-10 blogShort">
+                <font color="blue">     <h4>{{i.case}}</h4></font>
+                     <!--<img src="http://www.kaczmarek-photo.com/wp-content/uploads/2012/06/DSC_4073-150x150.jpg" alt="post img" class="pull-left img-responsive thumb margin10 img-thumbnail">-->
+                     <article><p>
+                         {{i.desc}}
+                         </p></article>
+                  
+                 </div>
+                 <br><br>        <br><br>
+                 {%endfor%}
+                     
+              
+                 
+               <div class="col-md-12 gap10"></div>
+             </div>
+</div><br><br><br><br>
+
+{%endblock%}

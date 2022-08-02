@@ -1,0 +1,199 @@
+{%extends "user_layout.html"%}
+{%block content%}
+<div class=" lawyers agileits-w3layouts-specials" id="lawyers">
+	<div class="container">
+		<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+<div class="container">
+    <br/>
+	<div class="row justify-content-center">
+                        <div class="col-12 col-md-10 col-lg-8">
+                            <form class="card card-sm" method="GET">
+                                <div class="card-body row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        <i class="fas fa-search h4 text-body"></i>
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col">
+                                        <input class="form-control form-control-lg form-control-borderless"name="search"  type="search" placeholder="Search Lawyers">
+                                    </div>
+                                    <!--end of col-->
+                                    <div class="col-auto">
+                                        <button class="btn btn-lg btn-success" type="submit">Search</button>
+                                    </div>
+                                    <!--end of col-->
+                                </div>
+                            </form>
+                        </div>
+                        <!--end of col-->
+                    </div>
+</div>
+<style>
+	.form-control-borderless {
+    border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+</style>
+		<h3 class="tittle">Our Lawyers</h3>
+		{%for i in obj%}
+				<div class="special-grids">
+					<div class="col-md-6 lawyer1 special-left l-grids">
+						 <figure class="effect-bubba">
+								<img src="../static/pics/{{i.image}}" alt=""/>
+								<figcaption>
+									<h4>{{i.name}}</h4>	<br>
+                                    <h4>{{i.type}}</h4>												
+								</figcaption>			
+						 </figure>
+                         <a href="/user_view_lawyer_profile/{{i.id}}">	<h4 class="name">VIEW PROFILE</h4></a>
+					</div>
+					{%endfor%}
+					<!-- <div class="col-md-6 lawyer1 special-left l-grids">
+						 <figure class="effect-bubba">
+								<img src="../static/images/l6.jpg" alt=""/>
+								<figcaption>
+									<h4>Integrating technology to solve your problems</h4>	
+								</figcaption>			
+						 </figure>
+								<h4 class="name">legal Advocate</h4>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="where-spl">
+					<div class="col-md-6 lawyer1 special-left l-grids">
+						 <figure class="effect-bubba">
+								<img src="../static/images/l9.jpg" alt=""/>
+								<figcaption>
+									<h4>Integrating technology to solve your problems</h4>	
+								</figcaption>			
+						 </figure>
+								<h4 class="name">legal Advocate</h4>
+					</div>
+					<div class="col-md-6 lawyer1 special-left l-right l-grids">
+						 <figure class="effect-bubba">
+								<img src="../static/images/l8.jpg" alt=""/>
+								<figcaption>
+									<h4>Integrating technology to solve your problems</h4>	
+								</figcaption>			
+						 </figure>
+								<h4 class="name">legal Advocate</h4>
+					</div> -->
+					<div class="clearfix"></div>
+				</div>
+	</div>
+</div>
+<!-- <br><br><br><br>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<div class="container search-table" style="width:887px; padding-right: 487px;">
+            <div class="search-box" style="width:887px;padding-right: 487px;">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>Lawyers</h5>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search Lawyers">
+                        <script>
+                            $(document).ready(function () {
+                                $("#myInput").on("keyup", function () {
+                                    var value = $(this).val().toLowerCase();
+                                    $("#myTable tr").filter(function () {
+                                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                                    });
+                                });
+                            });
+                        </script>
+                    </div> 
+                </div>
+            </div>
+            <div class="search-list" style="width:887px;padding-right: 487px;">
+            
+                <table class="table" id="myTable" style="width:887px;padding-right: 487px;">
+                    <thead>		<tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Lawyer Type</th>
+                               <th>Qualification</th>
+                             
+                                <th>Barcode ID</th>
+                                <th>Court</th>
+                          
+                                <th>Email</th>
+                                <th>Contact</th>
+                                
+								<th class="td-actions">Book</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+                                {% for i in obj %}
+                                <tr>
+                                    <td>{{i.id}}</td>
+                                    <td>{{i.name}}</td>
+                                    <td>{{i.type}}</td>
+                                    <td>{{i.qualification}}</td>
+                                <td>{{i.barcodeid}}</td>
+                              
+                                    <td>{{i.court}}</td>
+                        
+                                    <td>{{i.username}}</td>
+                                    <td>{{i.contact}}</td>
+                                   				 <td class="td-actions">
+                                <a href="/user_view_history/{{i.id}}" class="btn btn-small" style="background-color: blue;
+                                border-color:blue;">
+                                    <i class="">View Case History</i>										
+                                </a>
+									<a href="/book_lawyer/{{current_user.id}}/{{i.id}}" class="btn btn-small btn-primary" style="background-color: green;
+                                    border-color: green;">
+										<i class="">Book Lawyer</i>										
+									</a>
+									</td>
+									
+							</tr>
+						
+                            {% endfor %}
+						
+						</tbody>
+					</table>
+	
+				</div>
+			</div>
+			<style>
+				.search-table{
+		padding: 10%;
+		margin-top: -6%;
+	}
+	.search-box{
+		background: cornflowerblue;
+		border: 1px solid #ababab;
+		padding: 3%;
+	}
+	.search-box input:focus{
+		box-shadow:none;
+		border:2px solid #eeeeee;
+	}
+	.search-list{
+		background: #fff;
+		border: 1px solid #ababab;
+		border-top: none;
+	}
+	.search-list h3{
+		background: #eee;
+		padding: 3%;
+		margin-bottom: 0%;
+	}
+			</style>
+	<br><br><br><br> -->
+{%endblock%}

@@ -1,0 +1,79 @@
+{%extends "user_layout.html"%}
+{%block content%}
+<br><br><br><br>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-md-4 " style="
+        left: 439px;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Payment Details
+                    </h3>
+                    <div class="checkbox pull-right">
+                        <label>
+                            <input type="checkbox" />
+                            Remember
+                        </label>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <form role="form" method="POST"  enctype="multipart/form-data">
+
+
+                    <div class="form-group">
+                        <label for="cardNumber">
+                            CARD NUMBER</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" pattern="[0-9]{16}"maxlength= 16 id="cardNumber" placeholder="Valid Card Number" name="cardno"
+                                required autofocus />
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7 col-md-7">
+                            <div class="form-group">
+                                <label for="expityMonth">
+                                    EXPIRY DATE</label>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" maxlength=2 pattern="[0-9]{2}" class="form-control" id="expityMonth" placeholder="MM" required  name="month"/>
+                                </div>
+                                <div class="col-xs-6 col-lg-6 pl-ziro">
+                                    <input type="text" maxlength=2 class="form-control" id="expityYear" placeholder="YY" required pattern="[0-9]{2}"name="year"/></div>
+                            </div>
+                        </div>
+                        <div class="col-xs-5 col-md-5 pull-right">
+                            <div class="form-group">
+                                <label for="cvCode">
+                                    CV CODE</label>
+                                <input type="password" maxlength=3 pattern="[0-9]{3}" class="form-control" id="cvCode" placeholder="CV" required name="cvv"/>
+                            </div>
+                        </div>
+                    </div>
+              <input type="hidden" value="1500" name="amount">
+                </div>
+            </div>
+            <ul class="nav nav-pills nav-stacked">
+                
+                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>Rs 1500/-</span> Final Payment</a>
+                </li>
+            </ul>
+            <br/>
+            <input type="submit" class="btn btn-success btn-lg btn-block" role="button" value="PAY">
+        </div>
+    </div>
+</div>
+</form>
+<style>
+    body { margin-top:20px; }
+.panel-title {display: inline;font-weight: bold;}
+.checkbox.pull-right { margin: 0; }
+.pl-ziro { padding-left: 0px; }
+</style>
+<br><br><br><br>
+{%endblock%}

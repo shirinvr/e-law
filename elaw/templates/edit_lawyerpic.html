@@ -1,0 +1,125 @@
+{%extends 'lawyer_layout.html'%}
+{%block content%}
+<BR><BR><BR><BR>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container register-form">
+            <div class="form">
+                <div class="note">
+                    <p>Update Profile</p>
+                </div>
+                <br>
+                <!-- <b><h3>
+               {% with messages = get_flashed_messages() %}
+               {% if messages %}
+                  {% for message in messages %}
+                     {{ message }}
+                  {% endfor %}
+               {% endif %}
+            {% endwith %}</h3> -->
+           </b><br><br>
+<form method="POST" enctype="multipart/form-data">
+                <div class="form-content">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- <div class="form-group">
+                                <input type="text" class="form-control" validation="required"name="name"placeholder="Your Name *" value="{{d.name}}"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control"validation="required" maxlength=10 pattern="[0-9]{10}"name="contact"placeholder="Phone Number *" value="{{d.contact}}"/>
+                            </div> -->
+                          
+                             Profile photo
+                            <div class="form-group">
+                                <input type="file" class="form-control"validation="required" name="image"placeholder="Profile pic *" value="{{d.image}}"/>
+                            </div> 
+                        </div>
+                        <!-- <div class="col-md-6">
+                            <div class="form-group">
+                                <select validation="required" class="form-control" name="type" placeholder="Lawyer Type*" value="{{d.type}}"/> -->
+                                <!-- <option>Choose Lawyer Type</option> -->
+                                <!-- <option>Criminal Lawyer</option>
+                                <option>Civil Rights Lawyer</option>
+                                <option>Family Lawyer</option>
+                                <option>Immigration Lawyer</option>
+                                <option>Tax Lawyer</option>
+                                <option>Corporate Lawyer</option>
+                                <option>Immigration Lawyer</option>
+                            </select>
+                            </div>
+                            <div class="form-group">
+                                <select validation="required" class="form-control" name="court" placeholder="Court*" value="{{d.court}}"/> -->
+                                <!-- <option>Select Court</option> -->
+                                <!-- {%for i in m%}
+                                <option>{{i.court}},{{i.location}}</option>
+                                {%endfor%} -->
+                                <!-- <option>Civil Rights Lawyer</option>
+                                <option>Family Lawyer</option>
+                                <option>Immigration Lawyer</option>
+                                <option>Tax Lawyer</option>
+                                <option>Corporate Lawyer</option>
+                                <option>Immigration Lawyer</option> -->
+                            <!-- </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" validation="required" class="form-control" name="barcodeid" placeholder="Barcode ID*" value="{{d.barcodeid}}"/>
+                            </div>
+                           
+                        </div>
+                        <div class="col-md-6">
+                     
+                            <div class="form-group">
+                                <input type="text" validation="required" class="form-control" name="qualification" placeholder=" Qualification *" value="{{d.qualification}}"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="email" validation="required" class="form-control" name="username" placeholder="Email*" value="{{d.username}}"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" validation="required" class="form-control" name="password" placeholder=" Password *" value="{{d.password}}"/>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                    <button type="submit" class="btnSubmit">Update</button>
+                </div>
+            </div>
+        </div>
+    </form>
+        <style>
+            .note
+{
+    text-align: center;
+    height: 80px;
+    background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+    color: #fff;
+    font-weight: bold;
+    line-height: 80px;
+}
+.form-content
+{
+    padding: 5%;
+    border: 1px solid #ced4da;
+    margin-bottom: 2%;
+}
+.form-control{
+    border-radius:1.5rem;
+}
+.btnSubmit
+{
+    border:none;
+    border-radius:1.5rem;
+    padding: 1%;
+    width: 20%;
+    cursor: pointer;
+    background: #0062cc;
+    color: #fff;
+}
+        </style>
+<br><br><br><br>
+{%endblock%}

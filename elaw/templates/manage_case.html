@@ -1,0 +1,55 @@
+{%extends "lawyer_layout.html"%}
+{%block content%}
+<br><br><br><br>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <div class="row col-md-6 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+    <a href="/lawyer_add_case" class="btn btn-primary btn-xs pull-right"><b>+</b> Add Case Details</a>
+        <tr>
+            <th>ID</th>
+            <th>Case</th>
+            <!-- <th>Description</th> -->
+            <!-- <th>Address</th>
+            <th>Location</th>
+            <th>Court Timing</th> -->
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    {%for i in obj%}
+            <tr>
+                <td>{{i.id}}</td>
+                <td>{{i.case}}</td>
+                <!-- <td>{{i.desc}}</td> -->
+                <!-- <td>{{i.address}}</td>
+                <td>{{i.location}}</td>
+                <td>{{i.time}}</td> -->
+                <td><a href="/delete_case/{{i.id}}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+            </tr>
+            {%endfor%}
+           
+    </table>
+    </div>
+</div>
+<style>
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }
+</style>
+
+<br><br><br><br>
+
+{%endblock %}
